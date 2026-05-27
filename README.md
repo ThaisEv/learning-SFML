@@ -2,7 +2,7 @@
 
 > *"Todo grande jogo começa com um `main.cpp` em branco e muita coragem."*
 
-Bem-vindo ao meu repositório de aprendizado de **C++ + SFML**! Aqui está documentada a gloriosa (e às vezes sofrida) jornada de transformar linhas de código em um jogo de verdade. 🕹️
+Bem-vindo ao meu repositório de aprendizado de **`C++` + `SFML`**! Aqui está documentada a gloriosa (e às vezes sofrida) jornada de transformar linhas de código em um jogo de verdade. 🕹️
 
 ---
 
