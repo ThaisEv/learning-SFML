@@ -4,36 +4,40 @@
 
 int main(){
 
-    sf::RenderWindow mainWindow(sf::VideoMode({800, 600}), "Example 1");
-    sf::Texture imagem;
+    // Cenario 146 x 85
+    // Primeiro (0,37)
+
+    unsigned int escala = 6;
+    sf::RenderWindow tela(sf::VideoMode({146*escala, 85*escala}), "");
+    sf::Texture graficos;
 
     //! verificando se a imagem carregou
-    if (!imagem.loadFromFile("assets/fundo.jpg"))
+    if (!graficos.loadFromFile("assets/KC2.png"))
     {
         std::cerr << "Erro ao carregar imagem\n";
-        return 0;
+        return EXIT_FAILURE;
     }
 
-    sf::Sprite fundo(imagem);
-    fundo.setPosition(sf::Vector2f(0, 0));
-    fundo.setScale(sf::Vector2f(0.3,0.3));
+    sf::Sprite cenario(graficos);
+    cenario.setScale(sf::Vector2f(escala,escala));
+    cenario.setTextureRect(sf::IntRect(sf::Vector2i(0,37), sf::Vector2i(146,85)));
 
-    while(mainWindow.isOpen()) {
+    while(tela.isOpen()) {
 
         //! funcao que escuta os evento
-        while(const std::optional event = mainWindow.pollEvent()){
+        while(const std::optional event = tela.pollEvent()){
 
             // função que escuta quando clica "X"
             if(event->is<sf::Event::Closed>()) {
-                mainWindow.close();
+                tela.close();
             }
         }
         
-        mainWindow.clear(sf::Color::Black);
-        mainWindow.draw(fundo);
-        mainWindow.display();
+        tela.clear(sf::Color::Black);
+        tela.draw(cenario);
+        tela.display();
 
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
